@@ -91,8 +91,13 @@ refs.list.innerHTML = imagesTemplate(images);
 refs.list.addEventListener("click", e => {
     e.preventDefault();
     if (e.target.nodeName === "IMG") {
-        console.log(e.target.dataset.source);
+        const largeImg = e.target.dataset.source;
+        const instance = basicLightbox.create(`
+    <img src="${largeImg}">`)
+        instance.show()
     }
 })
+
+
 
 
